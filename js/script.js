@@ -46,8 +46,6 @@ botonEncriptar.addEventListener("click", function(event) {
     textoIngresado.value = "";
 });
 
-
-
 /* Reglas de desencriptación: 
 "enter" es convertido para "e" 
 "imes" es convertido para "i"
