@@ -1,33 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecriptador - Challenge 1</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3943885706.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1 class="titulo">Código secreto</h1>
+    <main>
+        <div class="container">
+            <div class="main">
+                <section class="seccion-entrada">
+                    <div class="logo">
+                        <img src="img/logo-alura.png" alt="Logo">
+                    </div>
+    
+                    <form>
+                        <textarea class="text-input" type="text" name="input-texto" id="input-texto" placeholder="Ingrese el texto aqui"></textarea>
 
-    <main class="contenedor main dos-columnas">
-        <section class="form box">
-            <form action="">
-                <label for="input-texto">Solo letras minúsculas, sin acento</label>
-                <input class="text-input" type="text" name="input-texto" id="input-texto"
-                    placeholder="Ingrese el texto aqui">
-                <input class="btn" type="submit" value="Encriptar" id="btn-encriptar">
-                <input class="btn" type="submit" value="Desencriptar" id="btn-desencriptar">
-            </form>
-        </section>
+                        <div class="seccion-entrada__botones">
+                            <p><i class="fa-solid fa-circle-exclamation"></i> Solo letras minúsculas y sin acentos</p>
+    
+                            <div class="form__botones">
+                                <input class="btn btn-1" type="submit" value="Encriptar" id="btn-encriptar" placeholder="Ingrese el texto aquí">
+                                <input class="btn btn-2" type="submit" value="Desencriptar" id="btn-desencriptar">
+                            </div>
+                        </div>
+                    </form>
+                </section>
+    
+                <section class="seccion-salida">
+                    <div class="seccion-salida__img">
+                        <img src="img/Muñeco.png" alt="Imagen">
+                    </div>
 
-        <section class="msg box">
-            <h2 id="">Mensaje procesado:</h2>
-            <input class="text-input" type="text" id="msg"></input>
-            <input class="btn" type="submit" value="Copiar" id="btn-copy">
-        </section>
+                    <div class="seccion-salida__respuesta">
+                        <textarea class="text-input" type="text" id="msg" placeholder="Ingrese el texto aqui"></textarea>
+                        <input class="btn btn-2" type="submit" value="Copiar" id="btn-copy">
+                    </div>
+
+                    <div class="seccion-salida__mensaje">
+                        <h3>Ningún mensaje fue encontrado</h3>
+                        <p>Ingrese el texto que desees encriptar o desencriptar</p>
+                    </div>
+                </section>
+            </div>
+        </div>
     </main>
 
     <script src="js/script.js"></script>

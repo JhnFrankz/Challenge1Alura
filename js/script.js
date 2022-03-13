@@ -42,8 +42,13 @@ var botonEncriptar = document.querySelector("#btn-encriptar");
 
 botonEncriptar.addEventListener("click", function(event) {
     event.preventDefault();
-    textoSalida.value = encriptar(textoIngresado.value);
-    textoIngresado.value = "";
+    if (textoIngresado.value != "") {
+        mostrarResultado();
+        textoSalida.value = encriptar(textoIngresado.value);
+        textoIngresado.value = "";
+    } else {
+        quitarResultado();
+    }
 });
 
 /* Reglas de desencriptación: 
@@ -69,12 +74,16 @@ var botonDesencriptar = document.querySelector("#btn-desencriptar");
 
 botonDesencriptar.addEventListener("click", function(event) {
     event.preventDefault();
-    textoSalida.value = desencriptar(textoIngresado.value);
-    textoIngresado.value = "";
+    if (textoIngresado.value != "") {
+        mostrarResultado();
+        textoSalida.value = desencriptar(textoIngresado.value);
+        textoIngresado.value = "";
+    } else {
+        quitarResultado();
+    }
 });
 
-
-//Copiar
+/*                  Boton Copiar                */
 var botonCopiar = document.querySelector("#btn-copy");
 
 botonCopiar.addEventListener("click", function(event) {
@@ -84,5 +93,39 @@ botonCopiar.addEventListener("click", function(event) {
     document.execCommand("copy");
 });
 
+//Muestra el texto encriptado/desencriptado y quitar el mensaje e imagen
+function mostrarResultado() {
+    let textarea = document.getElementsByClassName("seccion-salida__respuesta")[0];
+    textarea.style.display = "block";
+    quitarMensaje();
+    quitarImagen();
+}
 
+//SI no hay texto para encriptar/desencriptar, quita la caja de texto de salida
+//y vuelve a mostrar la imagen y texto de "ningun mensaje encontrado"
+function quitarResultado() {
+    let textarea = document.getElementsByClassName("seccion-salida__respuesta")[0];
+    textarea.style.display = "none";
+    mostrarImagen();
+    mostrarMensaje();
+}
 
+function mostrarMensaje() {
+    let mensaje = document.getElementsByClassName("seccion-salida__mensaje")[0];
+    mensaje.style.display = "block";
+}
+
+function quitarMensaje() {
+    let mensaje = document.getElementsByClassName("seccion-salida__mensaje")[0];
+    mensaje.style.display = "none";
+}
+
+function mostrarImagen() {
+    let imagen = document.getElementsByClassName("seccion-salida__img")[0];
+    imagen.style.display = "block";
+}
+
+function quitarImagen() {
+    let imagen = document.getElementsByClassName("seccion-salida__img")[0];
+    imagen.style.display = "none";
+}
