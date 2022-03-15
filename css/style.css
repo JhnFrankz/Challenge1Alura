@@ -32,6 +32,12 @@ img {
     margin-top: 1rem;
 }
 
+.btn:hover {
+    font-weight: bold;
+    box-shadow: 0px 4px 16px rgba(49, 138, 172, 1);
+    transition: all 0.6s;
+}
+
 .btn-1 {
     color: #ffffff;;
     background: #0A3871;
@@ -43,7 +49,7 @@ img {
 }
 
 .main {
-    margin: 3rem 0;
+    margin-top: 3rem;
     height: 100%;
 }
 
@@ -63,7 +69,7 @@ img {
     }
 
     .seccion-entrada form {
-        height: 70rem;
+        height: 60rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -121,7 +127,7 @@ img {
 
 @media (min-width: 768px) {
     .seccion-salida {
-        height: 80rem;
+        height: 70rem;
         margin: 0;
     }
 
@@ -132,4 +138,17 @@ img {
 
 .seccion-salida__respuesta {
     display: none;
+}
+
+/*                  Footer              */
+
+.footer {
+    color: #0A3871;
+    font-weight: bold;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
 }
